@@ -12,18 +12,20 @@ function App() {
   const [bonkLeft, setBonkLeft] = useState(bonk)
 
   const act = () => {
-    setVal(()=> bonkL)
+
     if (bonkVal !== bonkL) {
       setCount(() => count++)
+      setVal(()=> bonkL)
     }
   }
 
   const [bonkRight, setBonkRight] = useState(bonk)
 
   const act2 = () => {
-    setVal(()=> bonkR)
+
     if (bonkVal !== bonkR) {
       setCount(() => count++)
+      setVal(()=> bonkR)
     }
   }
 
