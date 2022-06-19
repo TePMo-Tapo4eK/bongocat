@@ -15,6 +15,8 @@ function App() {
     setVal(()=> bonkLeft)
   }
 
+   let audio = new Audio(); // Создаём новый элемент Audio
+	 audio.src = '.././bonk1.mp3'; // Указываем путь к звуку "клика"
 
 
   const [bonkRight, setBonkRight] = useState(bonk)
@@ -36,6 +38,7 @@ function App() {
       <div className="btns">
       <button onClick={act}>clc</button>
       <button onClick={act2}>clc</button>
+      <audio><source type="audio/mpeg" src=".././bonk.mp3"></source></audio>
       </div>
     </div>
   );
