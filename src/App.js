@@ -7,23 +7,24 @@ import { useState } from "react";
 
 function App() {
   const [bonkVal, setVal] = useState(bonk)
+  let [count, setCount] = useState(0)
 
   const [bonkLeft, setBonkLeft] = useState(bonk)
 
   const act = () => {
-    setBonkLeft(() => bonkL)
-    setVal(()=> bonkLeft)
+    setVal(()=> bonkL)
+    if (bonkVal !== bonkL) {
+      setCount(() => count++)
+    }
   }
-
-   let audio = new Audio(); // Создаём новый элемент Audio
-	 audio.src = '.././bonk1.mp3'; // Указываем путь к звуку "клика"
-
 
   const [bonkRight, setBonkRight] = useState(bonk)
 
   const act2 = () => {
-    setBonkRight(() => bonkR)
-    setVal(()=> bonkRight)
+    setVal(()=> bonkR)
+    if (bonkVal !== bonkR) {
+      setCount(() => count++)
+    }
   }
 
 
@@ -36,9 +37,12 @@ function App() {
         <img src={bonkVal}/>
       </div>
       <div className="btns">
-      <button onClick={act}>clc</button>
-      <button onClick={act2}>clc</button>
+      <div onClick={act}></div>
+      <div onClick={act2}></div>
       <audio><source type="audio/mpeg" src=".././bonk.mp3"></source></audio>
+      </div>
+      <div className="counter">
+        {count}
       </div>
     </div>
   );
