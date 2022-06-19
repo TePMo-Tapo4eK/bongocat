@@ -7,22 +7,17 @@ import { useState } from "react";
 
 function App() {
   const [bonkVal, setVal] = useState(bonk)
+
   let [count, setCount] = useState(0)
 
-  const [bonkLeft, setBonkLeft] = useState(bonk)
-
   const act = () => {
-
     if (bonkVal !== bonkL) {
       setCount(() => count++)
       setVal(()=> bonkL)
     }
   }
 
-  const [bonkRight, setBonkRight] = useState(bonk)
-
   const act2 = () => {
-
     if (bonkVal !== bonkR) {
       setCount(() => count++)
       setVal(()=> bonkR)
