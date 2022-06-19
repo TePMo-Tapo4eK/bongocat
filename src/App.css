@@ -2,6 +2,7 @@
   height: 100vh;
   width: 100%;
   overflow: hidden;
+  overflow-y:hidden;
 }
 .bg{
   height: 100vh;
@@ -33,6 +34,6 @@
 }
 @media screen and (max-width: 500px) {
   .bg img{
-    transform: translate(-48%, -50%)  scale(0.7);
+    transform: translate(-48.8%, -50%)  scale(0.7);
   }
 }
