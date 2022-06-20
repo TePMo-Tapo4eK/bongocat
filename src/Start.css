@@ -1,0 +1,56 @@
+.Start{
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    position: relative;
+    overflow: hidden;
+    cursor: pointer;
+}
+.btn-start{
+    height: 140px;
+    margin-top: 40vh;
+    padding: 0 200px;
+    font-weight: 700;
+    letter-spacing: 3px;
+    border-radius: 20px;
+    font-size: 60px;
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 8px solid black;
+    color: #000;
+    position: fixed;
+    z-index: 5;
+    transform: rotate(13.5deg);
+}
+.btn-start:hover{
+    position: relative;
+    top: 10px;
+}
+.Start img{
+    height: 100%;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-48%, -54%) scale(1.2);
+}
+@media screen and (max-width: 500px) {
+    .btn-start{
+        height: 70px;
+        font-size: 30px;
+        margin-top: 20vh;
+        padding: 0 120px;
+        border: 4px solid black;
+    }
+    .Start img{
+        height: 100%;
+      position: absolute;
+      left: 50%;
+      top: 48%;
+      transform: translate(-48%, -54%) scale(0.7);
+    }
+}
