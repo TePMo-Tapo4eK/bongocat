@@ -7,8 +7,7 @@ import { useState } from "react";
 
 function App() {
   const [bonkVal, setVal] = useState(bonk);
-  const [tutor, setTutor] = useState(true)
-
+  const [tutor, setTutor] = useState(true);
   let [counter, setCounter] = useState(0);
 
   const act = () => {
@@ -16,6 +15,7 @@ function App() {
       setCounter(() => counter++);
       setVal(() => bonkL);
     }
+    console.log(counter)
   };
 
   const act2 = () => {
@@ -23,6 +23,7 @@ function App() {
       setCounter(() => counter++);
       setVal(() => bonkR);
     }
+    console.log(counter)
   };
 
   const shadow = () => {
@@ -37,18 +38,29 @@ function App() {
         <img src={bonkVal} />
       </div>
       <div className="btns">
-        <div onClick={act}></div>
-        <div onClick={act2}></div>
+        <div onClick={() =>
+          {if (bonkVal !== bonkL) {
+            setCounter(() => counter++);
+            setVal(() => bonkL);
+          }
+          }
+        }></div>
+        <div onClick={() =>
+          {if (bonkVal !== bonkR) {
+            setCounter(() => counter++);
+            setVal(() => bonkR);
+          }
+          }}></div>
       </div>
       <div className="counter">{counter}</div>
     </div>
     
     <div className={`intro ${tutor ? "" : "active" }`} onClick={shadow}>
       <div className={`intro__left ${tutor ? "" : "active" }`}>
-        <p>Жмякай сюда<br/> для левой лапки</p>
+        <p>Жмяк<br/>левой лапкой</p>
       </div>
       <div className={`intro__right ${tutor ? "" : "active" }`}>
-        <p>Жмякай сюда<br/> для правой лапки</p>
+        <p>Жмяк<br/> правой лапкой</p>
       </div>
     </div>
     
