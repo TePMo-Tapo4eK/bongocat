@@ -9,23 +9,8 @@ import Counter from "./Counter";
 function App() {
   const [bonkVal, setVal] = useState(bonk);
   const [tutor, setTutor] = useState(true);
-  let [counter, setCounter] = useState(0);
+  const [counter, setCounter] = useState(0);
 
-  const act = () => {
-    if (bonkVal !== bonkL) {
-      setCounter(() => counter++);
-      setVal(() => bonkL);
-    }
-    console.log(counter)
-  };
-
-  const act2 = () => {
-    if (bonkVal !== bonkR) {
-      setCounter(() => counter++);
-      setVal(() => bonkR);
-    }
-    console.log(counter)
-  };
 
   const shadow = () => {
     setTutor(() => false)
@@ -41,14 +26,14 @@ function App() {
       <div className="btns">
         <div onClick={() =>
           {if (bonkVal !== bonkL) {
-            setCounter(() => counter++);
+            setCounter(counter+1);
             setVal(() => bonkL);
           }
           }
         }></div>
         <div onClick={() =>
           {if (bonkVal !== bonkR) {
-            setCounter(() => counter++);
+            setCounter(counter+1);
             setVal(() => bonkR);
           }
           }}></div>
