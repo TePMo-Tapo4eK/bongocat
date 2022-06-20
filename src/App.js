@@ -4,6 +4,7 @@ import bonkR from "./bonk-r.svg";
 import "./App.css";
 import React from "react";
 import { useState } from "react";
+import Counter from "./Counter";
 
 function App() {
   const [bonkVal, setVal] = useState(bonk);
@@ -52,7 +53,7 @@ function App() {
           }
           }}></div>
       </div>
-      <div className="counter">{counter}</div>
+      <div className="counter"><Counter counter={counter}/></div>
     </div>
     
     <div className={`intro ${tutor ? "" : "active" }`} onClick={shadow}>
