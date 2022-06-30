@@ -7,10 +7,11 @@
     justify-content: start;
     position: fixed;
     width: 30%;
-    height: 140px;
+    min-height: 140px;
+    height: fit-content;
     font-size: 20px;
     top: 0px;
-    padding: 10px 0;
+    padding: 20px 0 30px;
     background-color: white;
     z-index: 8;
     border-radius: 0 0 10px 0;
