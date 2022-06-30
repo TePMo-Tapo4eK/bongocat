@@ -3,18 +3,62 @@ import bonkL from "./bonk-l.svg";
 import bonkR from "./bonk-r.svg";
 import "./App.css";
 import React from "react";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import Counter from "./Counter";
+import Results from "./Results/Results";
 
 function App() {
   const [bonkVal, setVal] = useState(bonk);
   const [tutor, setTutor] = useState(true);
   const [counter, setCounter] = useState(0);
-
+  const [lists, setLists] = useState([])
 
   const shadow = () => {
     setTutor(() => false)
   }
+
+
+
+  // useEffect(() => {
+  //   document.addEventListener('keypress', e => {
+  //     if (e.key === "f"){
+  //       if (bonkVal !== bonkL) {
+  //         setCounter(counter+1);
+  //         setVal(() => bonkL);
+  //       }
+  //     }
+  //     if (e.key === "j"){
+  //       if (bonkVal !== bonkR) {
+  //         setCounter(counter+1);
+  //         setVal(() => bonkR);
+  //       }
+  //     }
+  //   }
+    
+  //   )
+  //  return () => document.addEventListener('keypress',  e => {
+  //   if (e.key === "f"){
+  //     if (bonkVal !== bonkL) {
+  //       setCounter(counter+1);
+  //       setVal(() => bonkL);
+  //     }
+  //   }
+  //   else if (e.key === "j"){
+  //     if (bonkVal !== bonkR) {
+  //       setCounter(counter+1);
+  //       setVal(() => bonkR);
+  //     }
+  //   }
+  //  })
+  //  },[])
+
+
+    const addList = () => {
+      setLists([counter, ...lists])
+      setCounter(0)
+    }
+
+
 
   return (
     <>
@@ -50,6 +94,8 @@ function App() {
       </div>
     </div>
     
+    <Results list={lists}/>
+    <button className="results__btn" onClick={addList}>Send</button>
     </>
   );
 }

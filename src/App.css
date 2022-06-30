@@ -55,6 +55,7 @@
   .counter{
     font-size: 30px;
     margin-top: 20%;
+    margin-left: 20%;
   }
 }
 
@@ -128,4 +129,26 @@
     line-height: 20px;
   }
   
+}
+
+.results__btn{
+  font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  font-weight: 600;
+  width: 80px;
+  padding: 10px 0;
+  position: fixed;
+  left: 31%;
+  background-color: white;
+  top: 0;
+  font-size: 20px;
+  z-index: 8;
+  border-radius: 3;
+  border: 2px solid black;
+}
+@media screen and (max-width: 500px) {
+  .results__btn{
+    left: 41%;
+    font-size: 16px;
+  }
+   
 }
